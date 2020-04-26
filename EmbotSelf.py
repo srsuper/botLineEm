@@ -478,7 +478,7 @@ def helpset():
 ╠❋►ชื่อ;
 ╠❋►ตัส;
 ╠❋►Spam on ↔ off
-╰═❋BY:เอ็ม BotSelf"""
+╰═❋BY:คุณออ๊ดLมียตบVงหลบได้ BotSelf"""
     return helpSet
 
 def helpsetting():
@@ -514,7 +514,7 @@ def helpsetting():
 ╠❋►กันกลุ่ม ↔ ปิดกันกลุ่ม
 ╠❋►กันเข้า ↔ ปิดกันเข้า
 ╠❋►เปิดหมด ↔ ปิดหมด
-╰══BY:เอ็ม BotSelf"""
+╰══BY:คุณออ๊ดLมียตบVงหลบได้ BotSelf"""
     return helpSetting
 
 def helptexttospeech():
@@ -585,7 +585,7 @@ def helplanguange():
 ╠❋► ru : รัสเซีย
 ╠❋► th : ไทย
 ╠❋► zu : ซูลู
-╰═❋By.เอ็มBotSelf»
+╰═❋By.คุณออ๊ดLมียตบVงหลบได้BotSelf»
  
 「วิธีใช้ : Tr-th ตามด้วยคำที่จะแปล」"""
     return helpLanguange
@@ -732,12 +732,12 @@ def lineBot(op):
 #==============================================================================#
                 elif text.lower() == 'speed':
                     start = time.time()
-                    line.sendMessage(to, "เอ็ม BotSelf")
+                    line.sendMessage(to, "คุณออ๊ดLมียตบVงหลบได้ BotSelf")
                     elapsed_time = time.time() - start
                     line.sendMessage(msg.to, "[ %s ต่อวินาที ] [ " % (elapsed_time) + str(int(round((time.time() - start) * 1000)))+" ms ]")
                 elif text.lower() == 'sp':
                     start = time.time()
-                    line.sendMessage(to, "เอ็ม BotSelf")
+                    line.sendMessage(to, "คุณออ๊ดLมียตบVงหลบได้ BotSelf")
                     elapsed_time = time.time() - start
                     line.sendMessage(msg.to, "[ %s ต่อวินาที ] [ " % (elapsed_time) + str(int(round((time.time() - start) * 1000)))+" ms ]")
                 elif text.lower() == 'รีบอท':
@@ -748,7 +748,7 @@ def lineBot(op):
                     timeNow = time.time()
                     runtime = timeNow - botStart
                     runtime = format_timespan(runtime)
-                    line.sendMessage(to, "เอ็ม BotSelf\n {}".format(str(runtime)))
+                    line.sendMessage(to, "คุณออ๊ดLมียตบVงหลบได้ BotSelf\n {}".format(str(runtime)))
                 elif text.lower() == 'ข้อมูล':
                     try:
                         arr = []
@@ -3050,7 +3050,7 @@ def lineBot(op):
 
                 elif "ส่งเสียงแชท " in msg.text:
                     bctxt = msg.text.replace("ส่งเสียงแชท ", "")
-                    bc = ("บายเอ็มเซลบอท")
+                    bc = ("บายคุณออ๊ดLมียตบVงหลบได้เซลบอท")
                     cb = (bctxt + bc)
                     tts = gTTS(cb, lang='th', slow=False)
                     tts.save('tts.mp3')
@@ -3305,7 +3305,7 @@ def lineBot(op):
                     gruplist = line.getAllContactIds()
                     kontak = line.getContacts(gruplist)
                     num=1
-                    msgs="เอ็มBot Self"
+                    msgs="คุณออ๊ดLมียตบVงหลบได้Bot Self"
                     for ids in kontak:
                         msgs+="\n[%i] %s" % (num, ids.mid)
                         num=(num+1)
@@ -4043,7 +4043,7 @@ def lineBot(op):
                             pass
                         ret_ = "[ ข้อมูลทั้งหมดจากคอนแทค ]"
                         ret_ += "\n ชื่อ : {}".format(str(contact.displayName))
-                        ret_ += "\n เอ็มไอดี : {}".format(str(msg.contentMetadata["mid"]))
+                        ret_ += "\n คุณออ๊ดLมียตบVงหลบได้ไอดี : {}".format(str(msg.contentMetadata["mid"]))
                         ret_ += "\n สเตตัส : {}".format(str(contact.statusMessage))
                         ret_ += "\n รูปโปรไฟล : http://dl.profile.line-cdn.net/{}".format(str(contact.pictureStatus))
                         ret_ += "\n  รูปปก : {}".format(str(cover))
