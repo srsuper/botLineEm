@@ -14,7 +14,7 @@ botStart = time.time()
 #==============================================================================#
 #line = LINE()
 #line = LINE("เมล","พาส")
-line = LINE(XuAPgE5eH13Hbgj7mSSCmqe5wheTgVDhiE805ypPKx1hyHXCXLgshl02rpLCe+rUUVTfBE6SkoXrkRD0c1omm6o8RFZMgCETtwF7nDTKSg3PDQG6OIHE2npC1e3YfWXhvBMcXBwFrF5zE8s9T83cgQdB04t89/1O/w1cDnyilFU=)
+line = LINE('')
 line.log("Auth Token : " + str(line.authToken))
 line.log("Timeline Token : " + str(line.tl.channelAccessToken))
 
@@ -52,7 +52,7 @@ msg_dict = {}
 settings = {
     "autoAdd": False,
     "autoJoin": False,
-    'autoCancel':{"on":True,"members":10},	
+    'autoCancel':{"on":True,"members":10},
     "autoLeave": True,
     "autoRead": False,
     "leaveRoom": False,
@@ -167,7 +167,7 @@ mimic = {
     "status":False,
     "target":{}
     }
-    
+
 RfuCctv={
     "cyduk":{},
     "point":{},
@@ -182,17 +182,17 @@ rfuSet = {
 
 user1 = lineMID
 user2 = ""
-	
+
 setTime = {}
 setTime = rfuSet['setTime']
 
-contact = line.getProfile() 
-backup = line.getProfile() 
-backup.dispalyName = contact.displayName 
+contact = line.getProfile()
+backup = line.getProfile()
+backup.dispalyName = contact.displayName
 backup.statusMessage = contact.statusMessage
 backup.pictureStatus = contact.pictureStatus
 
-mulai = time.time() 
+mulai = time.time()
 dangerMessage = ["cleanse","group cleansed.","mulai",".winebot",".kickall","mayhem","kick on","Kick","!kickall","nuke","บิน","Kick","กระเด็น","หวด","เซลกากจัง","เตะ",".","ปลิว"]
 fukgerMessage = ["ควย","หี","แตด","เย็ดแม่","เย็ดเข้","ค.วย","สัส","เหี้ย","ไอ้เหี้ย","พ่อมึงตาย","ไอ้เลว","ระยำ","ชาติหมา","หน้าหี","เซลกาก","พ่องตาย","ส้นตีน","แม่มึงอ่ะ","แม่มึงดิ","พ่อมึงดิ"]
 
@@ -206,7 +206,7 @@ myProfile["displayName"] = lineProfile.displayName
 myProfile["statusMessage"] = lineProfile.statusMessage
 myProfile["pictureStatus"] = lineProfile.pictureStatus
 #==============================================================================#
-#==============================================================================#            
+#==============================================================================#
 def Rapid1Say(mtosay):
     line.sendText(Rapid1To,mtosay)
 
@@ -238,7 +238,7 @@ def restartBot():
     time.sleep(3)
     python = sys.executable
     os.execl(python, python, *sys.argv)
-    
+
 def logError(text):
     line.log("[ แจ้งเตือน ] " + str(text))
     time_ = datetime.now()
@@ -269,7 +269,7 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
     if to not in messageReq:
         messageReq[to] = -1
     messageReq[to] += 1
-        
+
 def sendMessageWithMention(to, lineMID):
     try:
         aa = '{"S":"0","E":"3","M":'+json.dumps(lineMID)+'}'
@@ -282,7 +282,7 @@ def cTime_to_datetime(unixtime):
     return datetime.fromtimestamp(int(str(unixtime)[:len(str(unixtime))-3]))
 def dt_to_str(dt):
     return dt.strftime('%H:%M:%S')
-  
+
 def delete_log():
     ndt = datetime.now()
     for data in msg_dict:
@@ -290,7 +290,7 @@ def delete_log():
             if "path" in msg_dict[data]:
                 line.deleteFile(msg_dict[data]["path"])
             del msg_dict[data]
-            
+
 def sendMention(to, text="", mids=[]):
     arrData = ""
     arr = []
@@ -318,7 +318,7 @@ def sendMention(to, text="", mids=[]):
         arr.append(arrData)
         textx += mention + str(text)
     line.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
-    
+
 def mentionMembers(to, mid):
     try:
         arrData = ""
@@ -420,7 +420,7 @@ def socmedia():
 ╠❋►เทส
 ╠❋►เพลงมา
 ╠❋►สปีด
-╠❋►ไอจี 
+╠❋►ไอจี
 ╠❋►เวลา
 ╠❋►ขอหื่น
 ╰═❋Ħ͢͢͠҉͢͢͠Ꝁ͢͢͠҉͢͢͠ S͢͢͠҉͢͢͠Ɇ͢͢͠҉͢͢͠Ł͢͢͠҉͢͢͠F͢͢͠҉͢͢͠Ƀ͢͢͠҉͢͢͠Ø͢͢͠҉͢͢͠Ŧ͢͢͠҉͢͢͠»"""
@@ -548,7 +548,7 @@ def helptexttospeech():
 
 「วิธีใช้ : พูด พี่คะหนูเงี่ยน」"""
     return helpTextToSpeech
-    
+
 def helplanguange():
     helpLanguange =    """╔══════════════┓
 ╠ ❋«คำสั่งแปลภาษา»❋
@@ -586,7 +586,7 @@ def helplanguange():
 ╠❋► th : ไทย
 ╠❋► zu : ซูลู
 ╰═❋By.คุณออ๊ดLมียตบVงหลบได้BotSelf»
- 
+
 「วิธีใช้ : Tr-th ตามด้วยคำที่จะแปล」"""
     return helpLanguange
 #==============================================================================#
@@ -620,7 +620,7 @@ def lineBot(op):
                 if matched_list == []:
                     pass
                 else:
-                    line.cancelGroupInvitation(op.param1, matched_list)				
+                    line.cancelGroupInvitation(op.param1, matched_list)
 #        if op.type == 13:
 #            group = line.getGroup(op.param1)
 #            if settings["autoJoin"] == True:
@@ -628,7 +628,7 @@ def lineBot(op):
         if op.type == 24:
             if settings["autoLeave"] == True:
                 line.leaveRoom(op.param1)
-                                     
+
         if op.type == 25:
             msg = op.message
             if msg.contentType == 13:
@@ -646,7 +646,7 @@ def lineBot(op):
                              elif invite in settings["blacklist"]:
                                  line.sendText(msg.to,"ขออภัย, " + _name + " บุคคนนี้อยู่ในรายการบัญชีดำ")
                                  line.sendText(msg.to,"ใช้คำสั่ง!, \n➡ล้างดำ➡ดึง" )
-                                 break                             
+                                 break
                              else:
                                  targets.append(invite)
                          if targets == []:
@@ -668,7 +668,7 @@ def lineBot(op):
                                          line.sendText(msg.to,"😧ตรวจพบข้อผิดพลาดที่ไม่ทราบสาเหตุ😩อาจเป็นได้ว่าบัญชีของคุณถูกแบนเชิญ😨")
                                          settings["winvite"] = False
                                          break
-                                         
+
         if op.type == 25:
             msg = op.message
             text = msg.text
@@ -794,24 +794,24 @@ def lineBot(op):
                                     pass
                 elif "โทร" == msg.text.lower():
                     line.inviteIntoGroupCall(msg.to,[uid.mid for uid in line.getGroup(msg.to).members if uid.mid != line.getProfile().mid])
-                    line.sendMessage(msg.to,"➠เชิญเข้าร่วมการโทรสำเร็จ ")	
+                    line.sendMessage(msg.to,"➠เชิญเข้าร่วมการโทรสำเร็จ ")
                 elif "ยกเลิก" == msg.text.lower():
                     if msg.toType == 2:
                         group = line.getGroup(msg.to)
                         gMembMids = [contact.mid for contact in group.invitee]
                         for _mid in gMembMids:
                             line.cancelGroupInvitation(msg.to,[_mid])
-                        line.sendMessage(to,"ยกเลิกค้างเชิญแล้ว" )           
+                        line.sendMessage(to,"ยกเลิกค้างเชิญแล้ว" )
 #===========
                 elif "สปีด" == msg.text.lower():
                     line.sendMessage(to,"「ความเร็ว...」\n███▒39%\n██████▒69%\n██████████▒99%\n0.0000000000000000 second")
-                    line.sendMessage(to,"0.0000000000000000 second")  
+                    line.sendMessage(to,"0.0000000000000000 second")
                     line.sendMessage(to,"(｡◕‿◕｡)")
 #===========
                 elif "เทส" == msg.text.lower():
                     line.sendMessage(to,"🔱🔯 คุณออ๊ดเมียตบยังหลบได้ Bot 🔯🔱")
-                    line.sendMessage(to,"LOADING:▒...0%")  
-                    line.sendMessage(to,"█▒... 10.0%")       
+                    line.sendMessage(to,"LOADING:▒...0%")
+                    line.sendMessage(to,"█▒... 10.0%")
                     line.sendMessage(to,"██▒... 20.0%")
                     line.sendMessage(to,"███▒... 30.0%")
                     line.sendMessage(to,"████▒... 40.0%")
@@ -820,8 +820,8 @@ def lineBot(op):
                     line.sendMessage(to,"███████▒... 70.0%")
                     line.sendMessage(to,"████████▒... 80.0%")
                     line.sendMessage(to,"█████████▒... 90.0%")
-                    line.sendMessage(to,"███████████..100.0%")                    
-                    line.sendMessage(to,"(｡◕‿◕｡)\nบอทยังทำงานคับท่าน😁")       
+                    line.sendMessage(to,"███████████..100.0%")
+                    line.sendMessage(to,"(｡◕‿◕｡)\nบอทยังทำงานคับท่าน😁")
 #==============================================================================#
                 elif "n" == msg.text.lower():
                     msg.contentType = 13
@@ -830,7 +830,7 @@ def lineBot(op):
                     line.sendMessage(to, "=========================")
 #===========
                 elif "เพลงมา" == msg.text.lower():
-                    line.sendMessage(to,"บ่แมนหมาวัดแล้วกะบ่ได้ใจนาง\nเลียหีจนครางกะดักใจนางไว้บ่ได้\nเย็ดดีปานได๋เบิร์นดีปานได๋เจ้ากะบ่หัวซา\nก้มเลียหีให่..บ่สงสารลิ้นเจ้าของ\nเย็ดหีจนร้อง..เลียดากอ้ายกะเลียให่\nมักเด้าหลาย..มักเด้าหลายได้ยินบ่\nรอเด้าอยู่เด้อออออ..แคมแดง")             
+                    line.sendMessage(to,"บ่แมนหมาวัดแล้วกะบ่ได้ใจนาง\nเลียหีจนครางกะดักใจนางไว้บ่ได้\nเย็ดดีปานได๋เบิร์นดีปานได๋เจ้ากะบ่หัวซา\nก้มเลียหีให่..บ่สงสารลิ้นเจ้าของ\nเย็ดหีจนร้อง..เลียดากอ้ายกะเลียให่\nมักเด้าหลาย..มักเด้าหลายได้ยินบ่\nรอเด้าอยู่เด้อออออ..แคมแดง")
 #==============================================================================#
                 elif "creator" == msg.text.lower():
                     line.sendMessage(to,"CREATOR ŚẾL₣ВΌŦ\n(｡◕‿◕｡)")
@@ -841,7 +841,7 @@ def lineBot(op):
                 elif "ทีมบอท" == msg.text.lower():
                     msg.contentType = 13
                     line.sendMessage(to, "CREAROT & ADMIN \nŚẾL₣ВΌŦ (｡◕‿◕｡)")
-                    line.sendContact(to, "u1b675a67ddec7aa8397491abe9d80a7a")                        
+                    line.sendContact(to, "u1b675a67ddec7aa8397491abe9d80a7a")
 #==============================================================================#
                 elif text.lower() == 'เช็ค':
                     try:
@@ -863,11 +863,11 @@ def lineBot(op):
                         if settings["Nk"] == True: ret_ += "\n╠❋ ข้อความแจ้งเตือนคนลบเปิด ✔"
                         else: ret_ += "\n╠❋ ข้อความแจ้งเตือนคนลบปิด ✘ "
                         if settings["autoCancel"]["on"] == True:ret_+="\n╠❋ ปฏิเสธกลุ่มเชิญที่มีสมาชิกต่ำกว่า: " + str(settings["autoCancel"]["members"]) + " → ✔"
-                        else: ret_ += "\n╠❋ ปฏิเสธกลุ่มเชิญปิด    ✘ "						
+                        else: ret_ += "\n╠❋ ปฏิเสธกลุ่มเชิญปิด    ✘ "
                         if settings["autoLeave"] == True: ret_ += "\n╠❋ ออกแชทรวมออโต้เปิด✔"
                         else: ret_ += "\n╠❋ ออกแชทรวมออโต้ปิด ✘ "
                         if settings["autoRead"] == True: ret_ += "\n╠❋ อ่านออโต้เปิด ✔"
-                        else: ret_ += "\n╠❋ อ่านออโต้ปิด ✘ "				
+                        else: ret_ += "\n╠❋ อ่านออโต้ปิด ✘ "
                         if settings["checkContact"] == True: ret_ += "\n╠❋ อ่านคทเปิด ✔"
                         else: ret_ += "\n╠❋ อ่านคทปิด   ✘ "
                         if settings["checkPost"] == True: ret_ += "\n╠❋ เช็คโพสเปิด ✔"
@@ -893,7 +893,7 @@ def lineBot(op):
                         if RfuProtect["Protectguest"] == True: ret_ += "\n╠❋ ป้องกันสมาชิกเปิด ✔"
                         else: ret_ += "\n╠❋ ป้องกันสมาชิกปิด ✘ "
                         if RfuProtect["Protectjoin"] == True: ret_ += "\n╠❋ ป้องกันคนนอกเข้ากลุ่ม ✔"
-                        else: ret_ += "\n╠❋ ป้องกันคนนนอกเข้ากลุ่ม ✘ "						
+                        else: ret_ += "\n╠❋ ป้องกันคนนนอกเข้ากลุ่ม ✘ "
                         ret_ += "\n╚════[ คุณออ๊ดLมียตบVงหลบได้ ]═════┛"
                         line.sendMessage(to, str(ret_))
                     except Exception as e:
@@ -930,7 +930,7 @@ def lineBot(op):
                         if settings["lang"] == "JP":
                                 line.sendText(msg.to,str(settings["eror"]))
                         else:
-                                line.sendText(msg.to,"Bizarre ratings")					
+                                line.sendText(msg.to,"Bizarre ratings")
                 elif text.lower() == 'แชท on':
                     settings["autoLeave"] = True
                     line.sendMessage(to, "❥ออกแชทรวมอัตโนมัติ ❋")
@@ -960,14 +960,14 @@ def lineBot(op):
                     line.sendMessage(to, "❥unsendMessage  enabled ❋")
                 elif text.lower() == 'ปิดเสือก':
                     settings["unsendMessage"] = False
-                    line.sendMessage(to, "❥unsendMessage disabled ❋")           
+                    line.sendMessage(to, "❥unsendMessage disabled ❋")
 #==============================================================================#
                 elif text.lower() == 'คท':
                     sendMessageWithMention(to, lineMID)
                     line.sendContact(to, lineMID)
                 elif text.lower() == 'me':
                     sendMessageWithMention(to, lineMID)
-                    line.sendContact(to, lineMID)                    
+                    line.sendContact(to, lineMID)
                 elif text.lower() == 'ผส':
                     sendMessageWithMention(to, lineMID)
                     line.sendContact(to, "u1b675a67ddec7aa8397491abe9d80a7a")
@@ -987,7 +987,7 @@ def lineBot(op):
                     line.sendVideoWithURL(msg.to,"http://dl.profile.line-cdn.net/" + me.pictureStatus + "/vp")
                 elif text.lower() == 'ปก':
                     me = line.getContact(lineMID)
-                    cover = line.getProfileCoverURL(lineMID)    
+                    cover = line.getProfileCoverURL(lineMID)
                     line.sendImageWithURL(msg.to, cover)
                 elif text.lower() == 'คอมเม้น':
                     line.sendMessage(msg.to,str(settings["comment"]))
@@ -1129,7 +1129,7 @@ def lineBot(op):
                             for ls in lists:
                                 path = line.getProfileCoverURL(ls)
                                 line.sendImageWithURL(msg.to, str(path))
-#==========================================                            
+#==========================================
                 elif msg.text.lower().startswith("ข้อมูล "):
                     if 'MENTION' in msg.contentMetadata.keys()!= None:
                         names = re.findall(r'@(\w+)', text)
@@ -1159,8 +1159,8 @@ def lineBot(op):
                                 lists.append(mention["M"])
                         for ls in lists:
                             path = "http://dl.profile.line-cdn.net/" + line.getContact(ls).pictureStatus
-                            line.sendImageWithURL(msg.to, str(path))                                
-                                
+                            line.sendImageWithURL(msg.to, str(path))
+
                 elif "โพส " in msg.text:
                     tl_text = msg.text.replace("โพส ","")
                     line.sendText(msg.to,"line://home/post?userMid="+lineMID+"&postId="+line.new_post(tl_text)["result"]["post"]["postInfo"]["postId"])
@@ -1201,50 +1201,50 @@ def lineBot(op):
                         line.sendMessage(msg.to, "กลับร่างเดิมแล้ว")
                     except Exception as e:
                         line.sendText(msg.to, str (e))
-                        
+
                 elif msg.text in ["allprotect on",".เปิดกทม"]:
                         settings["kickMention"] = True
                         settings["Aip"] = False
                         RfuProtect["protect"] = True
                         RfuProtect["cancelprotect"] = True
-                        RfuProtect["inviteprotect"] = True 
-                        RfuProtect["linkprotect"] = True 
+                        RfuProtect["inviteprotect"] = True
+                        RfuProtect["linkprotect"] = True
                         RfuProtect["Protectguest"] = True
                         RfuProtect["Protectjoin"] = True
                         line.sendText(msg.to,"❥ระบบป้องกันทั้งหมดเปิด ❋")
-						
+
                 elif msg.text in ["allprotect off",".ปิดกทม"]:
                         settings["kickMention"] = False
                         settings["Aip"] = False
                         RfuProtect["protect"] = False
                         RfuProtect["cancelprotect"] = False
-                        RfuProtect["inviteprotect"] = False 
-                        RfuProtect["linkprotect"] = False 
+                        RfuProtect["inviteprotect"] = False
+                        RfuProtect["linkprotect"] = False
                         RfuProtect["Protectguest"] = False
                         RfuProtect["Protectjoin"] = False
                         line.sendText(msg.to,"❥ระบบป้องกันทั้งหมดปิด ❋")
-                        
+
                 elif msg.text in ["Allmsg on",".เปิดข้อความ"]:
                         settings["Wc"] = True
                         settings["Lv"] = True
                         settings["Nk"] = True
                         settings["autoRead"] = True
-                        settings["checkSticker"] = True 
-                        settings["checkContact"] = True 
+                        settings["checkSticker"] = True
+                        settings["checkContact"] = True
                         settings["checkPost"] = True
                         settings["potoMention"] = True
                         settings["detectMention"] = True
                         settings["delayMention"] = True
                         settings["Api"] = True
                         line.sendText(msg.to,"การตั้งค่าชุดข้อความทั้งหมด เปิด👌")
-						
+
                 elif msg.text in ["Allmsg off",".ปิดข้อความ"]:
                         settings["Wc"] = False
                         settings["Lv"] = False
                         settings["Nk"] = False
                         settings["autoRead"] = True
-                        settings["checkSticker"] = False 
-                        settings["checkContact"] = False 
+                        settings["checkSticker"] = False
+                        settings["checkContact"] = False
                         settings["checkPost"] = False
                         settings["detectMention"] = False
                         settings["potoMention"] = False
@@ -1288,7 +1288,7 @@ def lineBot(op):
                         for mi_d in settings["mimic"]["target"]:
                             mc += "\n╠ "+line.getContact(mi_d).displayName
                         line.sendMessage(msg.to,mc + "\n╚══[ คุณออ๊ดLมียตบVงหลบได้ ]")
-                    
+
                 elif "nutmic" in msg.text.lower():
                     sep = text.split(" ")
                     mic = text.replace(sep[0] + " ","")
@@ -1404,7 +1404,7 @@ def lineBot(op):
                             ret_ += "\n╠ {}. {} | {}".format(str(no), str(group.name), str(len(group.members)))
                             no += 1
                         ret_ += "\n╚══[ จำนวน {} Groups ]".format(str(len(groups)))
-                        line.sendMessage(to, str(ret_))				
+                        line.sendMessage(to, str(ret_))
                 elif "เชิญคลอ" == msg.text.lower():
                     line.inviteIntoGroupCall(msg.to,[uid.mid for uid in line.getGroup(msg.to).members if uid.mid != line.getProfile().mid])
                     line.sendMessage(msg.to,"❋เชิญเข้าร่วมการโทรสำเร็จ❋")
@@ -1416,7 +1416,7 @@ def lineBot(op):
                         except:
                             pass
                 elif msg.text.lower() == 'เชิญแอด':
-                	if msg.toType == 2:                
+                	if msg.toType == 2:
                            ginfo = line.getGroup(receiver)
                            try:
                                gcmid = ginfo.creator.mid
@@ -1428,7 +1428,7 @@ def lineBot(op):
                            else:
                                line.inviteIntoGroup(receiver,[gcmid])
                                line.sendMessage(receiver, "❥ผู้สร้างกลุ่มอยู่ในแล้ว❋")
-                               
+
                 elif msg.text.lower() == "getjoined":
                     line.sendText(msg.to,"กรุณารอสักครู่ ใจเย็นๆ")
                     all = line.getGroupIdsJoined()
@@ -1442,7 +1442,7 @@ def lineBot(op):
                             text = ""
                             cnt = 0
                     line.sendText(msg.to,text[:-2])
-                    cnt = 0				
+                    cnt = 0
                 elif ".ข้อ " in msg.text.lower():
                     spl = re.split(".ข้อ ",msg.text,flags=re.IGNORECASE)
                     if spl[0] == "":
@@ -1457,7 +1457,7 @@ def lineBot(op):
                             line.sendText(msg.to,"ชื่อที่แสดง: "+userData.displayName)
                             line.sendText(msg.to,"ข้อความสเตตัส:\n"+userData.statusMessage)
                             line.sendText(msg.to,"ไอดีบัญชี: "+userData.mid)
-                
+
                 elif "รับแก้ไฟล์+เพิ่มไฟล์+แก้ภาษา\n💝ราคาดูที่หน้างาน💝\n👉มีบริการให้เช่าบอทSAMURAI\nราคา300บาทต่อเดือน💖\n#เพิ่มคิกเกอร์ตัวละ100👌\n🎀สนใจรีบทัก..บอทpython3ฟังชั่นล้นหลาม🎁กำลังรอให้คุณเป็นเจ้าของ\n(ผมจะอยู่ที่ห้องนี้แค่15นาทีนะจ๊ะ)\nselfbot by:\n╔══════════════┓\n╠™❍✯͜͡RED™SAMURAI✯͜͡❂➣ \n╚══════════════┛" in msg.text:
                     spl = msg.text.split("รับแก้ไฟล์+เพิ่มไฟล์+แก้ภาษา\n💝ราคาดูที่หน้างาน💝\n👉มีบริการให้เช่าบอทSAMURAI\nราคา300บาทต่อเดือน💖\n#เพิ่มคิกเกอร์ตัวละ100👌\n🎀สนใจรีบทัก..บอทpython3ฟังชั่นล้นหลาม🎁กำลังรอให้คุณเป็นเจ้าของ\n(ผมจะอยู่ที่ห้องนี้แค่15นาทีนะจ๊ะ)\nselfbot by:\n╔══════════════┓\n╠™❍✯͜͡RED™SAMURAI✯͜͡❂➣ \n╚══════════════┛")
                     if spl[len(spl)-1] == "":
@@ -1514,118 +1514,118 @@ def lineBot(op):
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
-                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้") 
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
-                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้") 
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
-                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้") 
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
-                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้") 
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
-                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้") 
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
-                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้") 
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
-                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้") 
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
-                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้") 
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
-                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้") 
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
-                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้") 
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
-                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้") 
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
-                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้") 
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
-                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้") 
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
-                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้") 
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
-                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้") 
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
-                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้") 
+                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
+                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
+                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
+                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
+                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
+                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
+                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
+                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
+                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
+                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
+                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
+                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
+                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
+                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
+                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
+                           line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(g.mid,"คุณออ๊ดLมียตบVงหลบได้")
                            line.sendText(msg.to, "❋ทำการรันแชท สำเร็จ❋")
                            print (" Spammed !")
                 elif "รัน: " in msg.text.lower():
                         key = msg.text[-33:]
-                        line.findAndAddContactsByMid(key)                   
+                        line.findAndAddContactsByMid(key)
                         contact = cl.getContact(key)
                         line.createGroup("Ħ͙͕͙͙͕͙͠҉͙͕͙͙͕͙͠Ꝁ͙͕͙͙͕͙͠҉͙͕͙͙͕͙͠ S͙͕͙͙͕͙͠҉͙͕͙͙͕͙͠Ɇ͙͕͙͙͕͙͠҉͙͕͙͙͕͙͠Ł͙͕͙͙͕͙͠҉͙͕͙͙͕͙͠F͙͕͙͙͕͙͠҉͙͕͙͙͕͙͠Ƀ͙͕͙͙͕͙͠҉͙͕͙͙͕͙͠Ø͙͕͙͙͕͙͠҉͙͕͙͙͕͙͠Ŧ͙͕͙͙͕͙͠҉͙͕͙͙͕͙͠",[key])
                         line.sendText(msg,to,"❋ทำการรัน สำเร็จ❋")
@@ -1648,7 +1648,7 @@ def lineBot(op):
                                 line.leaveGroup(gr)
                             except:
                                 pass
-                        line.sendText(msg.to,"❋สำเร็จแล้ว")	
+                        line.sendText(msg.to,"❋สำเร็จแล้ว")
                 elif ".whois " in msg.text.lower():
                     spl = re.split(".whois ",msg.text,flags=re.IGNORECASE)
                     if spl[0] == "":
@@ -1674,7 +1674,7 @@ def lineBot(op):
 
                 elif msg.text.lower() == "mid":
                     line.sendText(msg.to,user1)
-                
+
                 elif ".name " in msg.text.lower():
                     spl = re.split(".name ",msg.text,flags=re.IGNORECASE)
                     if spl[0] == "":
@@ -1697,8 +1697,8 @@ def lineBot(op):
                             ticket = spl[1].split(" ")[1].replace("line://ti/g/","") if "line://ti/g/" in spl[1].split(" ")[1] else spl[1].split(" ")[1].replace("http://line.me/R/ti/g/","") if "http://line.me/R/ti/g/" in spl[1].split(" ")[1] else spl[1].split(" ")[1]
                             line.acceptGroupInvitationByTicket(gid,ticket)
                         except Exception as e:
-                            line.sendText(msg.to,str(e))	
-                						
+                            line.sendText(msg.to,str(e))
+
                 elif msg.text.lower().startswith(".ส่งข้อความ "):
                     pnum = re.split(".ส่งข้อความ ",msg.text,flags=re.IGNORECASE)[1]
                     pnum = "66"+pnum[1:]
@@ -1753,8 +1753,8 @@ def lineBot(op):
                             s += 7
                             txt += '@Alin \n'
                         line.sendMessage(to, text=txt, contentMetadata={'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
-                        line.sendMessage(to, "❋ทั้งหมด {} คน❋".format(str(len(nama))))  
-#===================================================================#              
+                        line.sendMessage(to, "❋ทั้งหมด {} คน❋".format(str(len(nama))))
+#===================================================================#
 
                 elif text.lower() == 'มอง':
                     tz = pytz.timezone("Asia/Jakarta")
@@ -1797,7 +1797,7 @@ def lineBot(op):
                         with open('read.json', 'w') as fp:
                             json.dump(read, fp, sort_keys=True, indent=4)
                             line.sendMessage(msg.to, "เริ่มนับคนอ่าน\n(｡◕‿◕｡)\n" + readTime)
-                            
+
 
                 elif text.lower() == 'ไครอ่าน':
                     tz = pytz.timezone("Asia/Jakarta")
@@ -1819,7 +1819,7 @@ def lineBot(op):
                             chiya = []
                             for rom in list(read["ROM"][receiver].items()):
                                 chiya.append(rom[1])
-                            cmem = line.getContacts(chiya) 
+                            cmem = line.getContacts(chiya)
                             zx = ""
                             zxc = ""
                             zx2 = []
@@ -1840,9 +1840,9 @@ def lineBot(op):
                             print (error)
                         pass
                     else:
-                        line.sendMessage(receiver,"สั่ง (มอง) แล้วสั่ง (ไครอ่าน) \n(^人^) ")                
+                        line.sendMessage(receiver,"สั่ง (มอง) แล้วสั่ง (ไครอ่าน) \n(^人^) ")
 #==============================================================================#
-#=============================================#                    
+#=============================================#
                 elif msg.text.lower().startswith("พูด "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1850,7 +1850,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-tr "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1865,7 +1865,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-        
+
                 elif msg.text.lower().startswith("say-sq "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1873,7 +1873,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-ar "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1881,7 +1881,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-hy "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1889,7 +1889,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-bn "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1897,7 +1897,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-ca "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1905,7 +1905,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-zh "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1913,7 +1913,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-zh-cn "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1921,7 +1921,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-zh-tw "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1929,7 +1929,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-zh-yue "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1937,7 +1937,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-hr "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1945,7 +1945,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-cs "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1953,7 +1953,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-da "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1961,7 +1961,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-nl "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1969,7 +1969,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-en "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1977,7 +1977,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-en-au "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1985,7 +1985,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-en-uk "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -1993,7 +1993,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-en-us "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2001,7 +2001,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-eo "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2009,7 +2009,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-fi "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2017,7 +2017,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-fr "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2025,7 +2025,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-de "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2033,7 +2033,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-el "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2041,7 +2041,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-hi "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2049,7 +2049,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-hu "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2057,7 +2057,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-is "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2065,7 +2065,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-id "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2073,7 +2073,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-it "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2081,7 +2081,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-ja "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2089,7 +2089,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-km "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2097,7 +2097,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-ko "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2105,7 +2105,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-la "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2113,7 +2113,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-lv "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2121,7 +2121,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-mk "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2129,7 +2129,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-no "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2137,7 +2137,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-pl "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2145,7 +2145,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-pt "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2153,7 +2153,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-do "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2161,7 +2161,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-ru "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2169,7 +2169,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-sr "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2177,7 +2177,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-si "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2185,7 +2185,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-sk "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2193,7 +2193,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-es "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2201,7 +2201,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-es-es "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2209,7 +2209,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-es-us "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2217,7 +2217,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-sw "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2225,7 +2225,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-sv "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2233,7 +2233,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-ta "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2241,7 +2241,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-th "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2249,7 +2249,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-tr "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2257,7 +2257,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-uk "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2265,7 +2265,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-vi "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2273,7 +2273,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-                    
+
                 elif msg.text.lower().startswith("say-cy "):
                     sep = text.split(" ")
                     say = text.replace(sep[0] + " ","")
@@ -2281,7 +2281,7 @@ def lineBot(op):
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
                     line.sendAudio(msg.to,"hasil.mp3")
-#==============================================================================# 
+#==============================================================================#
                 elif msg.text.lower().startswith("tr-af "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
@@ -3020,19 +3020,19 @@ def lineBot(op):
                          ret_ = "{}".format(str(bc))
                          text = ret_ + ""
                          line.sendMessage(group, text)
-                    
+
                 elif "ประกาศแชท " in msg.text:
                     bc = msg.text.replace("ประกาศแชท ","")
                     gid = line.getAllContactIds()
                     for i in gid:
                         line.sendText(i,"======[ข้อความประกาศแชท]======\n\n"+bc+"\n\nBy: VK SELFBOT!! ")
-            
+
                 elif "ส่งรูปภาพกลุ่ม: " in msg.text:
                     bc = msg.text.replace("ส่งรูปภาพกลุ่ม: ","")
                     gid = line.getGroupIdsJoined()
                     for i in gid:
                         line.sendImageWithURL(i, bc)
-                       
+
                 elif "ส่งรูปภาพแชท: " in msg.text:
                     bc = msg.text.replace(".ส่งรูปภาพแชท: ","")
                     gid = line.getAllContactIds()
@@ -3057,7 +3057,7 @@ def lineBot(op):
                     n = line.getAllContactIdsJoined()
                     for manusia in n:
                         line.sendAudio(manusia, 'tts.mp3')
-                    
+
                 elif text.lower() == 'เวลา':
                     tz = pytz.timezone("Asia/Jakarta")
                     timeNow = datetime.now(tz=tz)
@@ -3110,7 +3110,7 @@ def lineBot(op):
                             a = items.index(path)
                             b = len(items)
                             line.sendImageWithURL(to, str(path))
-      
+
                 elif "ยูทูป " in msg.text.lower():
                     sep = text.split(" ")
                     search = text.replace(sep[0] + " ","")
@@ -3129,7 +3129,7 @@ def lineBot(op):
                             ret_ += "\n╠ https://www.youtube.com{}".format(str(data["href"]))
                         ret_ += "\n╚══[ จำนวนที่พบ {} ]".format(len(datas))
                         line.sendMessage(to, str(ret_))
-                        
+
                 elif "google " in msg.text.lower():
                     sep = text.split(" ")
                     search = text.replace(sep[0] + " ","")
@@ -3148,7 +3148,7 @@ def lineBot(op):
                             ret_ += "\n╠ https://www.google.com/search?q={}".format(str(data["href"]))
                         ret_ += "\n╚══[ จำนวนที่พบ {} ]".format(len(datas))
                         line.sendMessage(to, str(ret_))
-                        
+
                 elif "วีดีโอ " in msg.text.lower():
                     sep = text.split(" ")
                     search = text.replace(sep[0] + "วีดีโอ ","")
@@ -3167,7 +3167,7 @@ def lineBot(op):
                             ret_ += "\n╠ https://www.youtube.com{}".format(str(data["href"]))
                         ret_ += "\n╚══[ จำนวนที่พบ {} ]".format(len(datas))
                         line.sendMessage(to, str(ret_))
-                        
+
                 elif "หนัง " in msg.text.lower():
                     sep = text.split(" ")
                     search = text.replace(sep[0] + "หนัง ","")
@@ -3186,7 +3186,7 @@ def lineBot(op):
                             ret_ += "\n╠ https://www.youtube.com{}".format(str(data["href"]))
                         ret_ += "\n╚══[ จำนวนที่พบ {} ]".format(len(datas))
                         line.sendMessage(to, str(ret_))
-                        
+
                 elif "เพลง " in msg.text.lower():
                     sep = text.split(" ")
                     search = text.replace(sep[0] + "เพลง ","")
@@ -3247,7 +3247,7 @@ def lineBot(op):
                     msgs+="\n❋รายชื่อเพื่อนทั้งหมด❋\n\nมีดังต่อไปนี้ : %i" % len(kontak)
                     line.sendMessage(msg.to, msgs)
 
-                elif msg.text in ["เช็คบล็อค"]: 
+                elif msg.text in ["เช็คบล็อค"]:
                     blockedlist = line.getBlockedContactIds()
                     kontak = line.getContacts(blockedlist)
                     num=1
@@ -3258,7 +3258,7 @@ def lineBot(op):
                     msgs+="\n══════รายการบัญชีที่ถูกบล็อค══════\n\nTotal Blocked : %i" % len(kontak)
                     line.sendMessage(receiver, msgs)
 
-                elif msg.text in ["ไอดีเพื่อน"]: 
+                elif msg.text in ["ไอดีเพื่อน"]:
                     gruplist = line.getAllContactIds()
                     kontak = line.getContacts(gruplist)
                     num=1
@@ -3281,7 +3281,7 @@ def lineBot(op):
                 elif msg.text == ".ประ":
                 	line.sendMessage(msg.to,str(settings["message1"]))
                 elif msg.text.lower() == '.ดึงแอด':
-                	if msg.toType == 2:                
+                	if msg.toType == 2:
                            ginfo = line.getGroup(receiver)
                            try:
                                gcmid = ginfo.creator.mid
@@ -3298,10 +3298,10 @@ def lineBot(op):
                     if msg.toType == 2:
                         ginfo = line.getGroup(receiver)
                         try:
-                            line.leaveGroup(receiver)							
+                            line.leaveGroup(receiver)
                         except:
                             pass
-                elif msg.text in ["เช็คไอดี"]: 
+                elif msg.text in ["เช็คไอดี"]:
                     gruplist = line.getAllContactIds()
                     kontak = line.getContacts(gruplist)
                     num=1
@@ -3311,19 +3311,19 @@ def lineBot(op):
                         num=(num+1)
                     msgs+="\nจำนวน  %i" % len(kontak)
                     line.sendMessage(receiver, msgs)
-                    
+
                 elif msg.text in ["เตะแทค"]:
                     settings["kickMention"] = True
                     line.sendMessage(msg.to,"เปิดระบบเตะคนแทคแล้ว")
-                
+
                 elif msg.text in ["ปิดเตะแทค"]:
                     settings["kickMention"] = False
                     line.sendMessage(msg.to,"ปิดระบบเตะคนแทคแล้ว")
-                    
+
                 elif msg.text in ["เปิดแทค"]:
                         settings['detectMention'] = True
                         line.sendMessage(msg.to,"เปิดข้อความตอบรับคนแทค")
-                
+
                 elif msg.text in ["ปิดแทค"]:
                         settings['detectMention'] = False
                         line.sendMessage(msg.to,"ปิดข้อความตอบรับคนแทค")
@@ -3331,35 +3331,35 @@ def lineBot(op):
                 elif msg.text in ["เปิดแทค2"]:
                     settings["potoMention"] = True
                     line.sendMessage(msg.to,"เปิดแสดงรูปและคทคนแทค")
-                
+
                 elif msg.text in ["ปิดแทค2"]:
                     settings["potoMention"] = False
                     line.sendMessage(msg.to,"❋ปิดแสดงรูปและคทคนแทค")
-                    
+
                 elif msg.text in ["เปิดแทค3"]:
                     settings["delayMention"] = True
                     line.sendMessage(msg.to,"❋เปิดแทค คนแทคกลับ")
-                
+
                 elif msg.text in ["ปิดแทค3"]:
                     settings["delayMention"] = False
                     line.sendMessage(msg.to,"❋ปิดแทค คนแทคกลับ")
-                    
+
                 elif msg.text in ["เปิดตรวจ"]:
                     settings["Aip"] = True
                     line.sendMessage(msg.to,"❋เปิดระบบตรวจสอบบอทบิน")
-                
+
                 elif msg.text in ["ปิดตรวจ"]:
                     settings["Aip"] = False
                     line.sendMessage(msg.to,"❋ปิดระบบตรวจสอบบอทบิน")
-                    
+
                 elif msg.text in ["เปิดพูด"]:
                     settings["Api"] = True
                     line.sendMessage(msg.to,"❋เปิดระบบบอทapi")
-                
+
                 elif msg.text in ["ปิดพูด"]:
                     settings["Api"] = False
                     line.sendMessage(msg.to,"❋ปิดระบบบอทapi")
-                    
+
                 elif 'ตั้งแอด: ' in msg.text:
                   if msg._from in admin:
                      spl = msg.text.replace('ตั้งแอด: ','')
@@ -3368,7 +3368,7 @@ def lineBot(op):
                      else:
                          settings["message"] = spl
                          line.sendMessage(msg.to, "คุณออ๊ดLมียตบVงหลบได้\n❋ตั้งข้อความเมื่อมีคนแอด❋\n\n{}".format(str(spl)))
-                         
+
                 elif 'คอมเม้น: ' in msg.text:
                   if msg._from in admin:
                      spl = msg.text.replace('คอมเม้น: ','')
@@ -3376,8 +3376,8 @@ def lineBot(op):
                          line.sendMessage(msg.to, "❋ตั้งข้อความเรืยบร้อย❋")
                      else:
                          settings["comment"] = spl
-                         line.sendMessage(msg.to, "คุณออ๊ดLมียตบVงหลบได้\n❋ตั้งข้อความคอมเม้นแล้ว ❋\n\n{}".format(str(spl))) 
-                    
+                         line.sendMessage(msg.to, "คุณออ๊ดLมียตบVงหลบได้\n❋ตั้งข้อความคอมเม้นแล้ว ❋\n\n{}".format(str(spl)))
+
                 elif 'ตั้งแทค: ' in msg.text:
                   if msg._from in admin:
                      spl = msg.text.replace('ตั้งแทค: ','')
@@ -3386,7 +3386,7 @@ def lineBot(op):
                      else:
                          settings["Respontag"] = spl
                          line.sendMessage(msg.to, "คุณออ๊ดLมียตบVงหลบได้\n❋ตั้งข้อความตอบแทคแล้ว❋\n\n{}".format(str(spl)))
-                         
+
                 elif '.ทักเตะ: ' in msg.text:
                   if msg._from in admin:
                      spl = msg.text.replace('.ทักเตะ: ','')
@@ -3424,10 +3424,10 @@ def lineBot(op):
                     txt = msg.text.replace("kedip ", "")
                     t1 = "\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xa0\x81\xf4\x80\xa0\x81\xf4\x80\xa0\x81"
                     t2 = "\xf4\x80\x82\xb3\xf4\x8f\xbf\xbf"
-                    line.sendMessage(msg.to, t1 + txt + t2)						
+                    line.sendMessage(msg.to, t1 + txt + t2)
                 elif msg.text in ["ดึง"]:
                         settings["winvite"] = True
-                        line.sendMessage(msg.to,"❋ส่งคท คนที่ต้องการดึง❋")                            
+                        line.sendMessage(msg.to,"❋ส่งคท คนที่ต้องการดึง❋")
                 elif msg.text.lower() == ".ยกเชิญ":
                     if msg.toType == 2:
                         group = line.getGroup(msg.to)
@@ -3454,7 +3454,7 @@ def lineBot(op):
                            targets.append(x["M"])
                        for target in targets:
                            try:
-                               random.choice(Rfu).kickoutFromGroup(msg.to,[target])      
+                               random.choice(Rfu).kickoutFromGroup(msg.to,[target])
                                print ("Rfu kick User")
                            except:
                                random.choice(Rfu).sendMessage(msg.to,"Limit kaka 😫")
@@ -3467,10 +3467,10 @@ def lineBot(op):
                            targets.append(x["M"])
                        for target in targets:
                            try:
-                               line.kickoutFromGroup(msg.to,[target])             
+                               line.kickoutFromGroup(msg.to,[target])
                                print ("Sb Kick User")
                            except:
-                               line.sendMessage(msg.to,"Limit kaka 😫")                               
+                               line.sendMessage(msg.to,"Limit kaka 😫")
 
                 elif 'เชิญ' in text.lower():
                        targets = []
@@ -3848,7 +3848,7 @@ def lineBot(op):
                             settings["Wc"] = False
                             if settings["lang"] == "JP":
                                 line.sendMessage(to,"ปิดข้อความต้อนรับคนเข้ากลุ่ม❋")
-                                
+
                 elif msg.text.lower() == 'เปิดเตะ':
                         if settings["Nk"] == True:
                             if settings["lang"] == "JP":
@@ -3857,7 +3857,7 @@ def lineBot(op):
                             settings["Nk"] = True
                             if settings["lang"] == "JP":
                                 line.sendMessage(to,"เปิดข้อความแจ้งเตือนเมื่อมีคนลบสมาชิก❋")
-                                
+
                 elif msg.text.lower() == 'ปิดเตะ':
                         if settings["Nk"] == False:
                             if settings["lang"] == "JP":
@@ -3883,7 +3883,7 @@ def lineBot(op):
                             settings["Lv"] = False
                             if settings["lang"] == "JP":
                                 line.sendMessage(to,"ปิดข้อความเมื่อมีสมาชิกออกกลุ่ม❋")
-                                
+
                 elif msg.text.lower() == 'เปิดคท':
                         if settings["checkContact"] == True:
                             if settings["lang"] == "JP":
@@ -3924,9 +3924,9 @@ def lineBot(op):
                         if to not in settings["changeGroupPicture"]:
                             settings["changeGroupPicture"].append(to)
                         line.sendMessage(to, "❋ส่งรูปภาพลงมา❋")
-                        
+
                 elif text.lower() == "ปิดไฟ":
-                    line.sendContact(to, "u0035a5a6c5ae9d30c9a0992ecbc39395',")      
+                    line.sendContact(to, "u0035a5a6c5ae9d30c9a0992ecbc39395',")
 
                 elif text.lower() == 'ลบรัน':
                     gid = line.getGroupIdsInvited()
@@ -3936,7 +3936,7 @@ def lineBot(op):
                     elapsed_time = time.time() - start
                     line.sendMessage(to, "❋ลบรันเสร็จแล้ว❋")
                     line.sendMessage(to, "❋เวลาที่ใช้: %sวินาที❋" % (elapsed_time))
-			
+
                 elif "แบนหมด" in msg.text:
                   if msg._from in Family:
                       if msg.toType == 2:
@@ -3959,7 +3959,7 @@ def lineBot(op):
                                            json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
                                        except:
                                            line.sentMessage(msg.to,"พบข้อผิดพลาดที่ไม่ทราบสาเหตุ")
-										   
+
                 elif 'แบน' in text.lower():
                        targets = []
                        key = eval(msg.contentMetadata["MENTION"])
@@ -3991,11 +3991,11 @@ def lineBot(op):
                                print ("Unbanned User")
                            except:
                                line.sendMessage(msg.to,"ผิดพลาด")
-                
+
                 elif msg.text in ["เช็คแบน"]:
                   if msg._from in Family:
                     if settings["blacklist"] == {}:
-                        line.sendMessage(msg.to,"ไม่มีผู้ไช้ที่ติดแบน ❋") 
+                        line.sendMessage(msg.to,"ไม่มีผู้ไช้ที่ติดแบน ❋")
                     else:
                         line.sendMessage(msg.to,"รายชื่อผู้ไช้ที่ติดแบน❋")
                         mc = "รายชื่อ ❋\n"
@@ -4075,17 +4075,17 @@ def lineBot(op):
                     ret_ += "\n╠ STICKER URL : line://shop/detail/{}".format(pkg_id)
                     ret_ += "\n╚══[ คุณออ๊ดLมียตบVงหลบได้ ]"
                     line.sendMessage(to, str(ret_))
-              
+
 #==============================================================================#
         if op.type == 19:
             if lineMID in op.param3:
                 settings["blacklist"][op.param2] = True
         if op.type == 22:
             if settings['leaveRoom'] == True:
-                line.leaveRoom(op.param1)              
+                line.leaveRoom(op.param1)
         if op.type == 24:
             if settings['leaveRoom'] == True:
-                line.leaveRoom(op.param1)             
+                line.leaveRoom(op.param1)
 #==============================================================================#
 #==============================================================================#
         if op.type == 17:
@@ -4115,7 +4115,7 @@ def lineBot(op):
                     settings ["blacklist"][op.param2] = True
                     random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
                     random.choice(Rfu).inviteIntoGroup(op.param1,[op.param2])
-        
+
         if op.type == 13:
             if op.param2 not in Family:
                 if op.param2 in Family:
@@ -4153,7 +4153,7 @@ def lineBot(op):
                 if (settings["message"] in [""," ","\n",None]):
                     pass
                 else:
-                    line.sendMessage(op.param1,str(settings["message"]))                    
+                    line.sendMessage(op.param1,str(settings["message"]))
 
         if op.type == 11:
             if RfuProtect["linkprotect"] == True:
@@ -4161,7 +4161,7 @@ def lineBot(op):
                     G = line.getGroup(op.param1)
                     G.preventedJoinByTicket = True
                     random.choice(Rfu).updateGroup(G)
-                    random.choice(Rfu).kickoutFromGroup(op.param1,[op.param3])                    
+                    random.choice(Rfu).kickoutFromGroup(op.param1,[op.param3])
 
         if op.type == 13:
            if RfuProtect["Protectguest"] == True:
@@ -4250,7 +4250,7 @@ def lineBot(op):
                             line.sendMessage(to, str(ret_))
                         except:
                             line.sendMessage(to, "เกิดข้อผิดะลาดในการเช็คโพสนี้")
-                            
+
         if op.type == 26:
             msg = op.message
             text = msg.text
@@ -4268,7 +4268,7 @@ def lineBot(op):
                 elif msg.toType == 2:
                     to = receiver
                 if settings["autoRead"] == True:
-                    line.sendChatChecked(to, msg_id)				
+                    line.sendChatChecked(to, msg_id)
                 if to in read["readPoint"]:
                     if sender not in read["ROM"][to]:
                         read["ROM"][to][sender] = True
@@ -4307,7 +4307,7 @@ def lineBot(op):
         		             contact = line.getContact(msg._from)
         		             cName = contact.displayName
         		             balas = ["เนื่องจากตอนนี้ผมเปิดระบบเตะคนแทคไว้ " + "\n👉" + cName + "\n🙏ต้องขออภัยด้วยจริงๆ🙏Bye!!!"]
-        		             ret_ = "" + random.choice(balas)                     
+        		             ret_ = "" + random.choice(balas)
         		             name = re.findall(r'@(\w+)', msg.text)
         		             mention = ast.literal_eval(msg.contentMetadata["MENTION"])
         		             mentionees = mention["MENTIONEES"]
@@ -4315,7 +4315,7 @@ def lineBot(op):
         			               if mention['M'] in admin:
         				                  line.sendText(msg.to,ret_)
         				                  random.choice(Rfu).kickoutFromGroup(msg.to,[msg._from])
-        				                  break                                  
+        				                  break
         			               if mention['M'] in lineMID:
         				                  line.sendText(msg.to,ret_)
         				                  random.choice(Rfu).kickoutFromGroup(msg.to,[msg._from])
@@ -4334,7 +4334,7 @@ def lineBot(op):
                                    if mention["M"] in lineMID:
                                           line.sendImageWithURL(to,ret_)
                                           line.sendContact(msg.to, mi_d)
-                                          break  
+                                          break
                 if msg.contentType == 0 and sender not in lineMID and msg.toType == 2:
                     if "MENTION" in list(msg.contentMetadata.keys()) != None:
                          if settings['detectMention'] == True:
@@ -4371,7 +4371,7 @@ def lineBot(op):
                                           sendMessageWithMention(to, contact.mid)
                                           sendMessageWithMention(to, contact.mid)
                                           sendMessageWithMention(to, contact.mid)
-                                          break  
+                                          break
         if op.type == 65:
            print ("[ 65 ] NOTIFIED DESTROY MESSAGE")
            if settings["unsendMessage"] == True:
@@ -4397,7 +4397,7 @@ def lineBot(op):
                except Exception as error:
                    logError(error)
                    #traceback.print_tb(error.__traceback__)
-      
+
         if op.type == 17:
            print ("MEMBER JOIN TO GROUP")
            if settings["Wc"] == True:
@@ -4495,7 +4495,7 @@ def a2():
         return False
     else:
         return True
-        
+
 
 while True:
     try:
