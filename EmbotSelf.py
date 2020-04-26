@@ -1,28 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@srsuper 
-srsuper
-/
-botLineEm
-forked from Emclub/botLineEm
-0
-04
- Code Pull requests 0 Actions Projects 0 Wiki Security 0 Insights Settings
-botLineEm/EmbotSelf.py /
-@srsuper srsuper Update EmbotSelf.py
-c510f86 1 minute ago
-@Emclub@srsuper
-4143 lines (3989 sloc)  228 KB
-  
-Code navigation is available!
-Navigate your code with ease. Click on function and method calls to jump to their definitions or references in the same repository. Learn more
-
 # -*- coding: utf-8 -*-
 
 from linepy import *
