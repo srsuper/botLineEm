@@ -13,8 +13,8 @@ from googletrans import Translator
 botStart = time.time()
 
 nadya = LINE()
-#nadya = LINE("TOKEN KAMU")
-#nadya = LINE("Email","Password")
+nadya = LINE("TXuAPgE5eH13Hbgj7mSSCmqe5wheTgVDhiE805ypPKx1hyHXCXLgshl02rpLCe+rUUVTfBE6SkoXrkRD0c1omm6o8RFZMgCETtwF7nDTKSg3PDQG6OIHE2npC1e3YfWXhvBMcXBwFrF5zE8s9T83cgQdB04t89/1O/w1cDnyilFU=")
+nadya = LINE("panutchakorn_2533@hotmail.com","takumi2533")
 nadya.log("Auth Token : " + str(nadya.authToken))
 channelToken = nadya.getChannelResult()
 nadya.log("Channel Token : " + str(channelToken))
