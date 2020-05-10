@@ -13,7 +13,7 @@ from googletrans import Translator
 botStart = time.time()
 #==============================================================================#
 #line = LINE()
-#line = LINE("เมล","พาส")
+#line = LINE("aot5310@gmail.com","takumi2533")
 line = LINE()
 line.log("Auth Token : " + str(line.authToken))
 line.log("Timeline Token : " + str(line.tl.channelAccessToken))
